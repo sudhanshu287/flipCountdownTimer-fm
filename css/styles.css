@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap");
+
+:root {
+  --Grayish-blue: hsl(237, 18%, 59%);
+  --Soft-red: hsl(345, 95%, 68%);
+  --White: hsl(0, 0%, 100%);
+  --Dark-desaturated-blue: hsl(236, 21%, 26%);
+  --Very-dark-blue: hsl(235, 16%, 14%);
+  --Very-dark-mostly-black-blue: hsl(234, 17%, 12%);
+}
+
+/* 
+    RESET
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style-type: none;
+}
+body {
+  font-family: "Red Hat Text", sans-serif;
+  background-image: url(../images/bg-stars.svg);
+  height: 100vh;
+  background-color: var(--Very-dark-mostly-black-blue);
+}
+.container {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+h1 {
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 7px;
+  font-size: 20px;
+  color: var(--White);
+  padding: 1rem 0;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.flip__card {
+  border-radius: 5px;
+  flex-direction: column;
+  position: relative;
+  width: 70px;
+  background-color: var(--Dark-desaturated-blue);
+  display: flex;
+  color: var(--Soft-red);
+  font-size: 40px;
+  font-weight: 800;
+  box-shadow: 0px 10px 0px 0px rgba(0, 0, 0, 1);
+}
+.left__half,
+.right__half {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--Very-dark-mostly-black-blue);
+}
+.left__half {
+  position: absolute;
+  top: 41%;
+  left: -8%;
+}
+.right__half {
+  position: absolute;
+  left: 94%;
+  top: 41%;
+}
+.countdown .title {
+  margin-top: 1.5rem;
+  font-size: 8px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: var(--Grayish-blue);
+  text-align: center;
+}
+.top,
+.bottom {
+  height: 0.75em;
+  line-height: 1;
+  padding: 0.25em;
+  overflow: hidden;
+}
+
+.top {
+  border-bottom: 0.1px solid var(--Very-dark-blue);
+}
+.top-flip,
+.bottom-flip {
+  position: absolute;
+}
+.top-flip {
+  transform-origin: bottom;
+  animation: flip-top 0.5s ease-in forwards;
+  transform: rotateX(0deg);
+}
+.bottom-flip {
+  transform-origin: top;
+  animation: flip-bottom 0.5s ease-out 0.5s;
+  transform: rotateX(90deg);
+}
+
+@keyframes flip-top {
+  to {
+    transform: rotateX(90deg);
+  }
+}
+@keyframes flip-bottom {
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+.bottom {
+  display: flex;
+  align-items: flex-end;
+}
+.pattern__hill {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.pattern__hill > img {
+  width: 250%;
+  object-position: -480px;
+}
+.socials__link ul {
+  display: none;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  display: flex;
+  gap: 1.5rem;
+  transform: translateX(-50%);
+}
+.socials__link ul li {
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
+.socials__link ul li > img:hover {
+  filter: invert(60%) sepia(43%) saturate(6017%) hue-rotate(315deg)
+    brightness(109%) contrast(97%);
+}
+.socials__link ul li > img {
+  width: 100%;
+}
+@media screen and (min-width: 767px) {
+  .pattern__hill > img {
+    width: 100%;
+    object-position: 0;
+  }
+  .flip__card {
+    width: 120px;
+    font-size: 4rem;
+  }
+  .left__half,
+  .right__half {
+    width: 12px;
+    height: 12px;
+  }
+  .left__half {
+    position: absolute;
+    top: 43%;
+    left: -5%;
+  }
+  .right__half {
+    position: absolute;
+    left: 95%;
+    top: 43%;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .container {
+    height: 70vh;
+  }
+  h1 {
+    margin-bottom: 6rem;
+  }
+  .countdown {
+    gap: 2rem;
+  }
+  .flip__card {
+    font-size: 6.5rem;
+    width: 180px;
+  }
+  .left__half,
+  .right__half {
+    width: 15px;
+    height: 15px;
+  }
+  .left__half {
+    position: absolute;
+    top: 45%;
+    left: -5%;
+  }
+  .right__half {
+    position: absolute;
+    left: 96%;
+    top: 45%;
+  }
+  .countdown .title {
+    font-size: 0.9rem;
+  }
+  .pattern__hill {
+    width: 100%;
+    overflow: auto;
+  }
+  .pattern__hill > img {
+    width: 100%;
+    object-position: 0;
+    object-fit: cover;
+  }
+  .socials__link ul {
+    bottom: 50px;
+  }
+}
