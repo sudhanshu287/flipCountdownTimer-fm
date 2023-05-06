@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Frontend Mentor - Launch countdown timer solution</h1>
-  <a href="" target="_blank"><strong>➥ Live Demo</strong></a>
+  <a href="https://flip-countdown-timer-fm.vercel.app/" target="_blank"><strong>➥ Live Demo</strong></a>
 </div>
 <br/>
 
@@ -31,15 +31,17 @@ Users should be able to:
 
 ### Screenshot
 
-![]()
-![]()
-![]()
+![](./image-preview/countdown-timer-desktop-preview.png)
+
+![](./image-preview/countdown-timer-mobile-preview.png)
+
+![](./image-preview/countdown-timer-tablet-preview.png)
 
 
 ### Links
 
-- Solution URL: [Click Here]()
-- Live Site URL: [Live Demo]()
+- Solution URL: [Click Here](https://github.com/sudhanshu287/flipCountdownTimer-fm)
+- Live Site URL: [Live Demo](https://flip-countdown-timer-fm.vercel.app/)
 
 ## My process
 
